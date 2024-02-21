@@ -1,0 +1,27 @@
+<!-- updateForm.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Actualizar Portafolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <form method="post" th:action="@{'/portafolio/update/' + ${portafolio.portafolioId}}">
+        <div class="row">
+            <div class="col col-4" th:text="${portafolio.crypto.name}"></div>
+            <div class="col col-1"><img th:src="${portafolio.crypto.image}"></div>
+            <div class="col col-1" th:text="${portafolio.quantity}"></div>
+            <div class="col col-2">
+                <input type="number" name="newQuantity" required>
+            </div>
+            <div class="col col-2">
+                <button type="submit" class="btn btn-primary">Actualizar</button>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>
